@@ -1,0 +1,33 @@
+﻿@model List<OrderItem>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr class="fw-bold text-center">
+            <td>Ürün Numarası</td>
+            <td>Ürün</td>
+            <td>Fiyatı</td>
+            <td>Adeti</td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() > 0)
+        {
+            @foreach (var orders in Model)
+            {
+            <tr class="text-center">
+                <td>@orders.ProductId</td>
+                <td>@orders.Product</td>
+                <td>@orders.Price</td>
+                <td>@orders.Quantity</td>
+            </tr>
+            }
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                <h3>Listelenecek sipariş ayrıntısı bulunamadı.</h3>
+            </div>
+        }
+
+    </tbody>
+</table>
